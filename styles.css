@@ -1,0 +1,225 @@
+/* 主题样式 */
+:root {
+  --uk-color-primary: #00247d;
+  --uk-color-secondary: #cf142b;
+  --germany-color-primary: #dd0000;
+  --germany-color-secondary: #ffce00;
+  --france-color-primary: #002395;
+  --france-color-secondary: #ed2939;
+  --italy-color-primary: #008c45;
+  --italy-color-secondary: #cd212a;
+  --spain-color-primary: #aa151b;
+  --spain-color-secondary: #f1bf00;
+  --netherlands-color-primary: #ae1c28;
+  --netherlands-color-secondary: #21468b;
+  --russia-color-primary: #0039a6;
+  --russia-color-secondary: #d52b1e;
+}
+
+body {
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.font-geist-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* 各国区域样式 */
+.uk-header {
+  background: linear-gradient(45deg, rgba(0, 36, 125, 0.05), rgba(207, 20, 43, 0.05));
+  border-bottom: 3px solid var(--uk-color-primary);
+}
+
+.germany-header {
+  background: linear-gradient(45deg, rgba(221, 0, 0, 0.05), rgba(255, 206, 0, 0.05));
+  border-bottom: 3px solid var(--germany-color-primary);
+}
+
+.france-header {
+  background: linear-gradient(45deg, rgba(0, 35, 149, 0.05), rgba(237, 41, 57, 0.05));
+  border-bottom: 3px solid var(--france-color-primary);
+}
+
+.italy-header {
+  background: linear-gradient(45deg, rgba(0, 140, 69, 0.05), rgba(205, 33, 42, 0.05));
+  border-bottom: 3px solid var(--italy-color-primary);
+}
+
+.spain-header {
+  background: linear-gradient(45deg, rgba(170, 21, 27, 0.05), rgba(241, 191, 0, 0.05));
+  border-bottom: 3px solid var(--spain-color-primary);
+}
+
+.netherlands-header {
+  background: linear-gradient(45deg, rgba(174, 28, 40, 0.05), rgba(33, 70, 139, 0.05));
+  border-bottom: 3px solid var(--netherlands-color-primary);
+}
+
+.russia-header {
+  background: linear-gradient(45deg, rgba(0, 57, 166, 0.05), rgba(213, 43, 30, 0.05));
+  border-bottom: 3px solid var(--russia-color-primary);
+}
+
+/* 国旗样式 */
+.flag-uk {
+  position: relative;
+  background-color: #00247d; /* Navy blue background */
+  overflow: hidden;
+}
+
+.flag-uk::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    /* White diagonal cross (Saint Andrew's Cross) */
+    linear-gradient(45deg, transparent 39%, white 40%, white 43%, transparent 44%),
+    linear-gradient(135deg, transparent 39%, white 40%, white 43%, transparent 44%),
+    linear-gradient(225deg, transparent 39%, white 40%, white 43%, transparent 44%),
+    linear-gradient(315deg, transparent 39%, white 40%, white 43%, transparent 44%),
+    /* White cross (Saint George's Cross) */
+    linear-gradient(90deg, transparent 42%, white 43%, white 57%, transparent 58%),
+    linear-gradient(180deg, transparent 42%, white 43%, white 57%, transparent 58%);
+}
+
+.flag-uk::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    /* Red diagonal cross (Saint Patrick's Cross) */
+    linear-gradient(45deg, transparent 40.5%, #cf142b 41.5%, #cf142b 41.8%, transparent 42.8%),
+    linear-gradient(135deg, transparent 40.5%, #cf142b 41.5%, #cf142b 41.8%, transparent 42.8%),
+    linear-gradient(225deg, transparent 40.5%, #cf142b 41.5%, #cf142b 41.8%, transparent 42.8%),
+    linear-gradient(315deg, transparent 40.5%, #cf142b 41.5%, #cf142b 41.8%, transparent 42.8%),
+    /* Red cross (Saint George's Cross) */
+    linear-gradient(90deg, transparent 45%, #cf142b 46%, #cf142b 54%, transparent 55%),
+    linear-gradient(180deg, transparent 45%, #cf142b 46%, #cf142b 54%, transparent 55%);
+}
+
+.flag-germany {
+  background: linear-gradient(180deg, #000000 33.33%, #DD0000 33.33%, #DD0000 66.66%, #FFCE00 66.66%);
+}
+
+.flag-france {
+  background: linear-gradient(90deg, #002395 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #ED2939 66.66%);
+}
+
+.flag-italy {
+  background: linear-gradient(90deg, #008C45 33.33%, #F4F5F0 33.33%, #F4F5F0 66.66%, #CD212A 66.66%);
+}
+
+.flag-spain {
+  background: linear-gradient(180deg, #AA151B 25%, #F1BF00 25%, #F1BF00 75%, #AA151B 75%);
+}
+
+.flag-netherlands {
+  background: linear-gradient(180deg, #AE1C28 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #21468B 66.66%);
+}
+
+.flag-russia {
+  background: linear-gradient(180deg, #FFFFFF 33.33%, #0039A6 33.33%, #0039A6 66.66%, #D52B1E 66.66%);
+}
+
+.country-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.country-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 响应式布局 */
+@media (max-width: 640px) {
+  .grid-cols-1 {
+    grid-template-columns: 1fr;
+  }
+  
+  table {
+    font-size: 0.875rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* 无缩放功能的滚动条样式 */
+body {
+  overscroll-behavior: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* 社交媒体图标样式 */
+.social-icon-container a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(0);
+  transition: all 0.2s ease-in-out;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background-color: rgba(229, 231, 235, 0.2);
+}
+
+.social-icon-container a:hover {
+  transform: translateY(-2px);
+  background-color: rgba(229, 231, 235, 0.5);
+}
+
+nav a svg {
+  transition: transform 0.3s ease;
+}
+
+nav a:hover svg {
+  transform: scale(1.15);
+}
+
+/* 主要成分股闪烁高亮效果 */
+@keyframes stockHighlight {
+  0% { 
+    background-color: rgba(255, 255, 255, 0); 
+  }
+  50% { 
+    background-color: rgba(59, 130, 246, 0.15); 
+  }
+  100% { 
+    background-color: rgba(255, 255, 255, 0); 
+  }
+}
+
+.stock-highlight {
+  animation: stockHighlight 2s ease-in-out infinite;
+}
+
+tbody tr:hover {
+  background-color: rgba(243, 244, 246, 0.8);
+}
